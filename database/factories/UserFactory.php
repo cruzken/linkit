@@ -21,3 +21,23 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Post::class, function (Faker $faker) {
+    $linkOrBody = (rand(0,1) == 1) ? ['key' => 'url', 'value' => $faker->url] :
+                                     ['key' => 'body', 'value' => $faker->sentence];
+
+    return [
+        'user_id' => App\User::all()->random()->id,
+        'title' => $faker->sentence,
+        $linkOrBody['key'] => $linkOrBody['value'],
+        'created_at' => $faker->dateTimeThisMonth,
+    ];
+});
+
+
+            // $table->increments('id');
+            // $table->integer('user_id');
+            // $table->string('title');
+            // $table->string('url');
+            // $table->text('body');
+            // $table->timestamps();
