@@ -15,9 +15,11 @@
 //     return view('welcome');
 // });
 
-Route::get('/', 'PostController@index')->name('home');
+Route::get('/', 'PostsController@index')->name('home');
 
-Route::get('/posts/{post}', 'PostController@show');
+Route::get('/post/{post}', 'PostsController@show');
+
+Route::get('/user/{user}', 'UsersController@show');
 
 Auth::routes();
 

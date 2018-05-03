@@ -6,17 +6,7 @@
     <hr>
 
     @foreach($posts as $post)
-        <strong><a href="
-
-            @if($post->url)
-                {{ $post->url }}
-            @else
-                posts/{{ $post->id }}
-            @endif
-
-            ">{{ $post->title }}</a></strong>
-        <p>{{ $post->user->name }} | <a href="posts/{{ $post->id }}">{{ $post->created_at->diffForHumans() }}</a> | <a href="posts/{{ $post->id }}">{{ $post->comments->count() }} comments</a></p>
-        <hr>
+        @include('home.post')
     @endforeach
 
 @endsection
