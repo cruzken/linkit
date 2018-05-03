@@ -7,9 +7,10 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index(Post $posts)
+    public function index()
     {
-        return $posts->all();
+        $posts = Post::latest()->get();
+        return view('home', compact('posts'));
     }
 
     public function show(Post $post)
