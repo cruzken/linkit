@@ -42,11 +42,3 @@ $factory->define(App\Comment::class, function (Faker $faker) {
         'created_at' => $faker->dateTimeThisMonth,
     ];
 });
-
-
-            // $table->increments('id');
-            // $table->integer('user_id');
-            // $table->string('title');
-            // $table->string('url');
-            // $table->text('body');
-            // $table->timestamps();
