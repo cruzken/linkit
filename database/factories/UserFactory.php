@@ -24,12 +24,21 @@ $factory->define(App\User::class, function (Faker $faker) {
 
 $factory->define(App\Post::class, function (Faker $faker) {
     $linkOrBody = (rand(0,1) == 1) ? ['key' => 'url', 'value' => $faker->url] :
-                                     ['key' => 'body', 'value' => $faker->sentence];
+                                     ['key' => 'body', 'value' => $faker->paragraph];
 
     return [
         'user_id' => App\User::all()->random()->id,
         'title' => $faker->sentence,
         $linkOrBody['key'] => $linkOrBody['value'],
+        'created_at' => $faker->dateTimeThisMonth,
+    ];
+});
+
+$factory->define(App\Comment::class, function (Faker $faker) {
+    return [
+        'user_id' => App\User::all()->random()->id,
+        'post_id' => App\Post::all()->random()->id,
+        'body' => $faker->sentence,
         'created_at' => $faker->dateTimeThisMonth,
     ];
 });
