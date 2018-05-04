@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{ asset('css/sakura.css') }}">
 </head>
 <body>
+    @include('layouts.nav')
     @yield('content')
 </body>
 </html>

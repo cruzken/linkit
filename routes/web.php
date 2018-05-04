@@ -27,4 +27,4 @@ Route::get('/user/{user}/comments', 'UsersController@showComments');
 
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/authtest', 'HomeController@index');
