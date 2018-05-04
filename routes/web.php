@@ -15,6 +15,8 @@ Route::get('/', 'PostsController@index')->name('home');
 
 Route::get('/post/{post}', 'PostsController@show');
 
+Route::post('/post/{post}/comment', 'CommentsController@store');
+
 Route::get('/user/{user}', 'UsersController@show');
 
 Route::get('/user/{user}/posts', 'UsersController@showPosts');
