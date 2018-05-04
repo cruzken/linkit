@@ -1,7 +1,7 @@
 <a href="{{ url('/') }}">home</a> |
 
 @auth
-<a href="#">submit</a> |
+<a href="{{ route('submit') }}">submit</a> |
 @endauth
 
 @guest

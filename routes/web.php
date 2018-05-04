@@ -13,6 +13,10 @@
 
 Route::get('/', 'PostsController@index')->name('home');
 
+Route::get('/submit', 'PostsController@create')->name('submit');
+
+Route::post('/post', 'PostsController@store');
+
 Route::get('/post/{post}', 'PostsController@show');
 
 Route::post('/post/{post}/comment', 'CommentsController@store');
