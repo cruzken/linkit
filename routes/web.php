@@ -21,6 +21,10 @@ Route::get('/post/{post}', 'PostsController@show');
 
 Route::get('/user/{user}', 'UsersController@show');
 
+Route::get('/user/{user}/posts', 'UsersController@showPosts');
+
+Route::get('/user/{user}/comments', 'UsersController@showComments');
+
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
