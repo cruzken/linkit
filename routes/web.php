@@ -11,10 +11,6 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/', 'PostsController@index')->name('home');
 
 Route::get('/post/{post}', 'PostsController@show');
@@ -26,5 +22,3 @@ Route::get('/user/{user}/posts', 'UsersController@showPosts');
 Route::get('/user/{user}/comments', 'UsersController@showComments');
 
 Auth::routes();
-
-// Route::get('/authtest', 'HomeController@index');
