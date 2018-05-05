@@ -22,8 +22,15 @@
 @endauth
 
 @foreach($post->comments()->latest()->get() as $comment)
+
+
+<blockquote>
+    <p>
     <a href="{{ url('/') }}/user/{{ $comment->user->name }}">{{ $comment->user->name }}</a> | 
     <a href="{{ url('/') }}/post/{{ $post->id }}">{{ $comment->created_at->diffForHumans() }}</a>
-    <p>{{ $comment->body }}</p>
-    <hr>
+    <br>
+    {{ $comment->body }}
+    </p>
+</blockquote>
+
 @endforeach
