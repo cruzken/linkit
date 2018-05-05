@@ -8,5 +8,13 @@
     @foreach($posts as $post)
         @include('home.post')
     @endforeach
+    
+    @if(! ($posts->currentPage() == 1) )
+    <a href="{{ $posts->previousPageUrl() }}">Prev</a>
+    @endif
+    
+    @if( $posts->currentPage() != $posts->lastPage())
+    <a href="{{ $posts->nextPageUrl() }}">Next</a>
+    @endif
 
 @endsection

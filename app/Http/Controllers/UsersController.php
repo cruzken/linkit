@@ -33,7 +33,7 @@ class UsersController extends Controller
             ], 404);
         }
 
-        return view('user.posts', compact('posts'));
+        return view('user.posts', compact('user', 'posts'));
     }
 
     public function showComments($user)
@@ -47,7 +47,7 @@ class UsersController extends Controller
             ], 404);
         }
 
-        return view('user.comments', compact('comments'));
+        return view('user.comments', compact('user', 'comments'));
     }
 
 }
