@@ -15,37 +15,38 @@ then just follow step 1, configure the `.env` file with your database credential
 
 #### Follow these steps in your host terminal:
 1. clone this repo, goto the directory and rename the env file: 
-`git clone https://github.com/cruzken/linkit.git && cd linkit && cp .env.example .env`
+`user@host:~$ git clone https://github.com/cruzken/linkit.git && cd linkit && cp .env.example .env`
 
 1. clone laradock repo, goto the directory and rename the env file:
-`git clone https://github.com/laradock/laradock/ && cd laradock && cp env-example .env`
+`user@host:~/linkit$ git clone https://github.com/laradock/laradock/ && cd laradock && cp env-example .env`
 
-1. change the line `MYSQL_VERSION=latest` in laradock's .env file to: `MYSQL_VERSION=5.7`
+1. change the line `MYSQL_VERSION=latest` in `laradock/.env` to: `MYSQL_VERSION=5.7`
 
-1. Open `linkin/.env` and set DB_HOST's value to:
+1. Open `linkin/.env` and set `DB_HOST` value to:
 `mysql`
     1. for `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD` match the values set in `laradock/.env`
     `MYSQL_DATABASE`, `MYSQL_USER`, `MYSQL_PASSWORD`
 
 1. start building the containers:
-`docker-compose up -d nginx mysql workspace`
+`user@host:~/linkit/laradock$ docker-compose up -d nginx mysql workspace`
 
 1. access the workspace container:
-`docker-compose exec workspace bash`
+`user@host:~/linkit/laradock$ docker-compose exec workspace bash`
 
 1. in the workspace container initialize the app:
-`composer install && php artisan key:generate && php artisan migrate`
+`root@foo:/var/www# composer install && php artisan key:generate && php artisan migrate`
 
 ## Usage
 - If installed without docker, run `php artisan serve` in the project directory.
-- Go to the local address that the app is served in the browser (usually [localhost]() or [localhost:8000]())
+- Go to the local address that the app is served in the browser (usually [localhost](localhost) or [localhost:8000](localhost:8000))
 - Register user accounts, submit links, and post comments!
 
 ## Contributing
 There is no contributing guide (yet?) Feel free to submit pull requests for fixes, features, etc.
 
 ## Credits
-Thanks to the [Laravel](http://www.laravel.com) team for their amazing framework.  
+Thanks to the [Laravel](http://www.laravel.com) team for their amazing framework.
+Thanks to the [Laradock](http://laradock.io/) team for their docker environment configuration.
 Thanks to [oxalorg](https://github.com/oxalorg) for the elegant classless [css theme](https://github.com/oxalorg/sakura).
 
 ## License
