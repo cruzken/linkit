@@ -48,7 +48,7 @@ then just follow step 1, configure the `.env` file with your database credential
 
 ## Usage
 - If installed without docker, run `php artisan serve` in the project directory.
-- Go to the local address that the app is served in the browser (usually [localhost](localhost) or [localhost:8000](localhost:8000))
+- Go to the local address that the app is served in the browser (usually [localhost](http://localhost) or [localhost:8000](http://localhost:8000))
 - Register user accounts, submit links, and post comments!
 
 ## Contributing
