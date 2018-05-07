@@ -7,7 +7,7 @@ A web app where users post links and leave comments.  Built with [Laravel](http:
 Note: I wrote these instructions for systems with docker installed because it removes most of the hassle of obtaining dependencies and configuration.
 
 If you already have [Laravel dependencies](https://laravel.com/docs/5.6#server-requirements), installed [composer globally](https://getcomposer.org/doc/00-intro.md#globally), and a laravel supported [database](https://laravel.com/docs/5.6/database#introduction), 
-then just follow step 1, configure the `.env` file with your database credentials, do step 8 and `php artisan serve`
+then just follow step 1, configure the `.env` file with your database credentials, do step 7 in the project directory and `php artisan serve`
 
 ### Installation with docker
 #### Requirements:
