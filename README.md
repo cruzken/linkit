@@ -15,14 +15,14 @@ then just follow step 1, configure the `.env` file with your database credential
 
 #### Follow these steps in your host terminal:
 1. clone this repo, goto the directory and rename the env file: 
-```console
-user@host:~$ git clone https://github.com/cruzken/linkit.git && cd linkit && cp .env.example .env
-```
+    ```console
+    user@host:~$ git clone https://github.com/cruzken/linkit.git && cd linkit && cp .env.example .env
+    ```
 
 1. clone laradock repo, goto the directory and rename the env file:
-```console
-user@host:~/linkit$ git clone https://github.com/laradock/laradock/ && cd laradock && cp env-example .env
-```
+    ```console
+    user@host:~/linkit$ git clone https://github.com/laradock/laradock/ && cd laradock && cp env-example .env
+    ```
 
 1. change the line `MYSQL_VERSION=latest` in `laradock/.env` to: `MYSQL_VERSION=5.7`
 
@@ -32,19 +32,19 @@ user@host:~/linkit$ git clone https://github.com/laradock/laradock/ && cd larado
     `MYSQL_DATABASE`, `MYSQL_USER`, `MYSQL_PASSWORD`
 
 1. start building the containers:
-```console
-user@host:~/linkit/laradock$ docker-compose up -d nginx mysql workspace
-```
+    ```console
+    user@host:~/linkit/laradock$ docker-compose up -d nginx mysql workspace
+    ```
 
 1. access the workspace container:
-```console
-user@host:~/linkit/laradock$ docker-compose exec workspace bash
-```
+    ```console
+    user@host:~/linkit/laradock$ docker-compose exec workspace bash
+    ```
 
 1. in the workspace container initialize the app:
-```console
-root@foo:/var/www# composer install && php artisan key:generate && php artisan migrate
-```
+    ```console
+    root@foo:/var/www# composer install && php artisan key:generate && php artisan migrate
+    ```
 
 ## Usage
 - If installed without docker, run `php artisan serve` in the project directory.
