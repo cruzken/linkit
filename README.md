@@ -11,7 +11,7 @@ then just follow step 1, configure the `.env` file with your database credential
 
 ### Installation with docker
 #### Requirements:
-docker and docker-compose working in your host system
+[docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/) working in your host system
 
 #### Follow these steps in your host terminal:
 1. clone this repo, goto the directory and rename the env file: 
